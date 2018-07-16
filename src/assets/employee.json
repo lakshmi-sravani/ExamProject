@@ -1,0 +1,39 @@
+{
+  "employee": [
+    {
+      "name": "lakshmi",
+      "designation": "developer",
+      "skills": "java,java Script,manual testing, html,css,nodejs,angular"
+      
+    },
+    {
+       "name": "pradeepthi",
+      "designation": "developer",
+      "skills": "java,javaScript,manual testing, html,css,nodejs,angular"
+      
+    },
+    {
+       "name": "madhulikai",
+      "designation": "developer",
+      "skills": "java,javaScript,manual testing, html,css,nodejs,angular"
+      
+    },
+    {
+       "name": "pallavi",
+      "designation": "developer",
+      "skills": "java,javaScript,manual testing, html,css,nodejs,angular"
+      
+    },
+    {
+      "name": "chinnari",
+      "designation": "developer",
+      "skills": "java,javaScript,manual testing, html,css,nodejs,angular"
+      
+    },
+    {
+      "name": "sravani",
+      "designation": "developer",
+      "skills": "java,javaScript,manual testing, html,css,nodejs,angular"
+    }
+  ]
+}

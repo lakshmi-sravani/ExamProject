@@ -1,0 +1,40 @@
+
+<div *ngIf="emp">
+  <p-table [value]="emp">
+    <ng-template pTemplate="header">
+      <tr>
+        <th *ngFor="let col of cols">
+          {{col.header}}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-employee let-details="rowData" let-i="rowIndex">
+      <tr (click)="data()">
+        <td *ngFor="let col of cols" >
+          <span *ngIf="col.field==='skills'">
+             <div class="ui-g">
+    <div class="ui-g-12 ui-md-8">
+        <p-scrollPanel [style]="{width: '80%', height: '80px'}">
+             <textarea class="text" rows="15" cols="10" placeholder="Type Here" name="caddress">{{employee[col.field]}}</textarea><br>
+            
+        </p-scrollPanel>
+    </div>
+   
+ 
+</div>
+          </span>
+          <span *ngIf="col.field!=='skills'">{{employee[col.field]}}</span>
+          
+          <span *ngIf="col.field==='details'" style="width:50%;height:20%">
+            
+            
+            
+          </span>
+          <!--<span *ngIf="col.field!=='details'">{{employee[col.field]}}</span>-->
+        </td>
+      </tr>
+       </ng-template>
+ </p-table>
+
+</div>
+ 
