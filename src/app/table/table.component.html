@@ -1,16 +1,22 @@
-
-<div *ngIf="emp">
+<div *ngIf="emp" class="ui-g-12">
+  <div class="ui-g-9">
   <p-table [value]="emp">
     <ng-template pTemplate="header">
       <tr>
-        <th *ngFor="let col of cols">
+        <th *ngFor="let col of cols" style="width:20px;height:50px">
           {{col.header}}
         </th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-employee let-details="rowData" let-i="rowIndex">
-      <tr (click)="data()">
-        <td *ngFor="let col of cols" >
+    <ng-template pTemplate="body"
+                 let-employee
+                 let-details="rowData"
+                 let-i="rowIndex">
+      <tr [ngClass]="['one']">
+        <td *ngFor="let col of cols" 
+            let
+            i='index'
+            (click)="data(i)" style="width:20%;height:30%">
           <span *ngIf="col.field==='skills'">
              <div class="ui-g">
     <div class="ui-g-12 ui-md-8">
@@ -19,22 +25,22 @@
             
         </p-scrollPanel>
     </div>
-   
+
  
 </div>
           </span>
           <span *ngIf="col.field!=='skills'">{{employee[col.field]}}</span>
-          
-          <span *ngIf="col.field==='details'" style="width:50%;height:20%">
-            
-            
-            
+
+          <span *ngIf="col.field==='details'"
+                style="width:50%;height:20%">
+
+          <button pButton (click)="show(i)" class="">Edit</button>
           </span>
-          <!--<span *ngIf="col.field!=='details'">{{employee[col.field]}}</span>-->
+         
         </td>
       </tr>
-       </ng-template>
- </p-table>
-
+    </ng-template>
+  </p-table>
+  </div>
 </div>
- 
+<app-details></app-details>

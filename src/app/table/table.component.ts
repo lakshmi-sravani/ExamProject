@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
 
 import { EmployeeService } from '../employee.service';
 
 import { Employee } from '../employee';
 
-import {ScrollPanelModule} from 'primeng/scrollpanel';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+
+// import { Employe } from '../employe.model';
 
 @Component({
   selector: 'app-table',
@@ -15,20 +17,23 @@ export class TableComponent implements OnInit {
 
   emp: Employee[];
   cols: any[];
+  index: number = 0;
 
-employeeValue:Employee={
-name:'',
-designation:'',
-skills:''
-}
-debugger;
+
+
+  employeeValue: Employee = {
+    name: '',
+    designation: '',
+    skills: ''
+  }
+  debugger;
   constructor(private employeeService: EmployeeService) { }
   ngOnInit() {
-     this.cols = [
+    this.cols = [
       { field: 'name', header: 'Name' },
       { field: 'designation', header: 'Designation' },
-      { field: 'skills', header: 'Skills' },
-      { field: 'details', header: 'Details' }
+      { field: 'skills', header: 'Skills' }
+
     ];
     this.loadEmployee();
   }
@@ -39,8 +44,14 @@ debugger;
       this.emp = data.employee;
     });
   }
-  data(){
 
-    console.log(this.emp);
+  data(i) {
+    this.employeeValue = this.emp[i];
+
+    console.log(this.employeeValue);
+    this.employeeService.toggle();
+
   }
+
 }
+
