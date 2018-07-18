@@ -25,7 +25,5 @@ isOpen = false;
       return this.http.get('assets/employee.json');
     }
 
-// add(name,designation,skills,z){
 
-// }
 }

@@ -1,9 +1,9 @@
 
 <form>
   <h2 style="text-align:center"> DETAILS </h2>
-     name: <input type="text" pInputText ><br><br>
-     designation: <input type="text" name="designation" pInputText ><br><br>
+     name: <input type="text" pInputText name="nam" [(ngModel)]="employeedet.name" ><br><br>
+     designation: <input type="text" name="designation" [(ngModel)]="employeedet.designation" pInputText ><br><br>
      skills:<br>
-     <textarea class="text" rows="5" cols="25" name="skills" ></textarea><br>
+     <textarea class="text" rows="5" name="skills" cols="25" name="skills" [(ngModel)]="employeedet.skills" ></textarea><br>
 
 </form>

@@ -20,7 +20,6 @@ export class TableComponent implements OnInit {
   index: number = 0;
 
 
-
   employeeValue: Employee = {
     name: '',
     designation: '',
